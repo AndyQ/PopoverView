@@ -367,7 +367,7 @@
     
     for (NSString *string in stringArray) {
         CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName:font}];
-        UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
+        UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height  +10)];
         textButton.backgroundColor = [UIColor clearColor];
         textButton.titleLabel.font = font;
         textButton.titleLabel.textAlignment = kTextAlignment;
@@ -821,8 +821,9 @@
         return;
     }
     
+    NSString *text = ((UIButton *)sender).titleLabel.text;
     if (delegate && [delegate respondsToSelector:@selector(popoverView:didSelectItemAtIndex:itemText:)]) {
-        [delegate popoverView:self didSelectItemAtIndex:index itemText:@"Button"];
+        [delegate popoverView:self didSelectItemAtIndex:index itemText:text];
     }
 }
 
