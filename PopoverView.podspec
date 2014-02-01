@@ -19,8 +19,7 @@ Pod::Spec.new do |s|
     s.author       = { "Raquel Galan" => "iprayforwaves@gmail.com" }
     s.author       = 'runway20'
     s.source       = { :git => "https://github.com/AndyQ/PopoverView.git}
-    s.platform     = :ios
-    s.ios.deployment_target = "7.0"
+    s.platform     = :ios, '7.0'
 
     s.source_files = 'PopoverView/*.{h,m}'
 
